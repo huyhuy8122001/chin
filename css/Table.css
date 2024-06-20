@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Table {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: white;
+    z-index: 1000;
+}
+
+.navbar img {
+    width: 100px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.content {
+    padding: 20px;
+    margin-top: 100px; /* Điều chỉnh margin-top để tránh việc nội dung bị che khuất bởi navbar */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 20px 0;
+}
+
+.content-table {
+    width: 100%;
+    overflow-x: auto; /* Cho phép người dùng cuộn trang ngang khi cần thiết */
+}
+
+.content-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.Description,
+.Description_vn {
+    max-width: 300px; /* Điều chỉnh chiều rộng tối đa của các cột Description và Description_vn */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Hiển thị dấu ... nếu nội dung quá dài */
+    white-space: nowrap; /* Ngăn không cho nội dung xuống dòng */
+}
+
+.logo-column img {
+    max-width: 100px; /* Điều chỉnh kích thước tối đa của hình ảnh logo */
+    height: auto; /* Đảm bảo tỷ lệ hình ảnh không bị méo */
+}
+
+.Search-Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#input {
+    width: 100%; /* Sử dụng toàn bộ chiều rộng của phần tử cha */
+    max-width: 500px; /* Đặt kích thước tối đa */
+    height: 40px;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.img1,
+.img2 {
+    position: absolute;
+    bottom: 0;
+    width: 500px; /* Điều chỉnh kích thước ảnh */
+    height: auto; /* Duy trì tỷ lệ khung hình */
+}
+
+.img1 {
+    left: 0;
+}
+
+.img2 {
+    right: 0;
+}
+.logo-column img {
+    max-width: 100px;
+    height: auto;
+}
+
+.Description_vn,
+.link {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu h3 {
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.img {
+    width: 140px;
+    height: auto;
+}
+
+.btn.btn-success {
+    background: #257266;
+}
+
+.btn.btn-primary {
+    background: #257266;
+}
+
+/* Responsive CSS */
+@media only screen and (max-width: 600px) {
+    .logo-column img {
+        max-width: 70px;
+    }
+
+    .Description_vn,
+    .link {
+        max-width: none;
+        overflow: visible;
+        white-space: normal;
+    }
+}
+/* Thêm CSS responsive */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .button-new {
+        margin-top: 10px;
+    }
+    .logo-column img {
+        max-width: 70px;
+    }
+    .Description,
+    .Description_vn {
+        max-width: none;
+    }
+    .content {
+        margin-top: 150px;
+    }
+}
