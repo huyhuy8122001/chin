@@ -3,13 +3,26 @@ function getTableVisibilityClass($show_columns) {
     return $show_columns ? 'show' : 'hide';
 }
 
+$host = "db";
+$username = "php_docker";
+$password = "password";
+$dbname = "qualitycompany";
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo " ";
+} catch(PDOException $e) {
+    echo " " . $e->getMessage();
+}
+
 $error_message = ""; // Biến lưu trữ thông báo lỗi
 
 if (isset($_POST['btn'])) {
     $input = trim($_POST['input']); // Sử dụng trim() để loại bỏ khoảng trắng từ đầu và cuối chuỗi
     if (!empty($input)) {
         $show_columns = true;
-        require 'db/connect.php';
+        // require 'db/connect.php';
 
         $search_sql = "SELECT * FROM qualitycompany WHERE decription LIKE :input OR decription_vn LIKE :input ORDER BY quality DESC";
         $stmt = $conn->prepare($search_sql);
