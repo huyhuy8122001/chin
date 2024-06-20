@@ -1,6 +1,6 @@
 <?php
 $host = "db";
-$username = "root";
+$username = "php_docker";
 $password = "password";
 $dbname = "qualitycompany";
 
