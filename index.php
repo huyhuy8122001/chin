@@ -3,18 +3,23 @@ function getTableVisibilityClass($show_columns) {
     return $show_columns ? 'show' : 'hide';
 }
 
-$host = "db";
-$username = "php_docker";
-$password = "password";
-$dbname = "qualitycompany";
+// $host = "db";
+// $username = "php_docker";
+// $password = "password";
+// $dbname = "qualitycompany";
 
 
-$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-echo " ";
+// $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+// $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// echo " ";
+// $error_message = ""; // Biến lưu trữ thông báo lỗi
 
-
-$error_message = ""; // Biến lưu trữ thông báo lỗi
+$conn = mysqli_connect(
+    'db', # service name
+    'php_docker', # username
+    'password', # password
+    'qualitycompany' # db table
+);
 
 if (isset($_POST['btn'])) {
     $input = trim($_POST['input']); // Sử dụng trim() để loại bỏ khoảng trắng từ đầu và cuối chuỗi
